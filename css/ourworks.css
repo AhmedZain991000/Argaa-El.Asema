@@ -1,0 +1,234 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    background-color: var(--page-bg);
+    padding-top: 100px;
+}
+:root {
+    --bg-color: #172B22;  /*خلفية الهيدر والفوتر والأقسام المميزة، وعناوين النصوص على الخلفيات الفاتحة.*/
+    --text-color: #292F2A;  /*لون الفقرات والوصف والنصوص العادية فوق الخلفيات الفاتحة*/
+    --btns-bg: #C6A76B;  /*خلفية الأزرار الرئيسية، الأيقونات المميزة، والخطوط الزخرفية. استخدم نصًا أخضر غامقًا فوقه.*/
+    --page-bg: #F5F1E8;  /*خلفية الصفحة والأقسام وبطاقات المحتوى الهادئة*/
+    --sub-title-bg: rgba(198, 167, 107, 0.18);  /*خلفية الصفحة والأقسام وبطاقات المحتوى الهادئة*/
+}
+/* //////////////////////////////////////////////// */
+i{
+    color: var(--btns-bg);
+}
+
+/* header start */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.top-bar{
+    background-color: var(--bg-color);
+    color: var(--page-bg);
+    border-bottom: 1px solid var(--btns-bg);
+    font-size: 13px;
+}
+
+/*navbar start */
+nav{
+    background-color: var(--bg-color);
+    border-bottom: 2px solid var(--btns-bg);
+}
+#mainNav ul li a{
+    color: var(--page-bg);
+}
+.hero-btn{
+    color: var(--bg-color);
+    background-color: var(--btns-bg);
+    padding: 7px 15px;
+    border-radius: 15px;
+}
+.hero-btn:hover{
+    opacity: .8;
+    transform: scale(.98);
+    transition: .3s;
+}
+.hero-btn i{
+    color: var(--bg-color);
+    padding-left: 20px;
+    font-size: 15px;
+}
+#mainNav ul li a{
+    position: relative;
+    display: inline-block;
+}
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    border-radius: 10px;
+    background-color: var(--btns-bg);
+    bottom: -5px;
+    right: 0;
+    transition: 1s;
+}
+nav ul li.active a::before{
+    width: 100%;
+}
+#mainNav ul li a:hover{
+    color: var(--btns-bg);
+}
+.logo-text{
+    color: var(--page-bg);
+}
+.logo-text .logo-name{
+    font-size: 25px;
+}
+.logo-text .logo-sec-name{
+    font-size: 12px;
+}
+/* /////// header end */
+
+
+/*///////////// our works section start /////////////*/
+.portfolio-section {
+    border-bottom: 1px solid var(--btns-bg);
+    background-color: var(--page-bg);
+}
+.badge-custom{
+    background-color: #f8e1b3;
+    color: var(--btns-bg);
+}
+
+.portfolio-card {
+    border-color: rgba(23, 43, 34, 0.1) !important;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(23, 43, 34, 0.12) !important;
+    border-color: var(--btns-bg) !important;
+}
+
+.portfolio-img-wrapper {
+    height: 280px;
+    background-color: #e2ded5;
+}
+
+.portfolio-img {
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-img {
+    transform: scale(1.08);
+}
+
+/* التراكب الداكن فوق الصورة عند التحويم */
+.portfolio-overlay {
+    background: linear-gradient(to top, rgba(23, 43, 34, 0.92) 0%, rgba(23, 43, 34, 0.3) 60%, transparent 100%);
+    opacity: 0.9;
+    transition: opacity 0.35s ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.text-gold {
+    color: var(--btns-bg) !important;
+}
+/* our works section end */
+
+
+/* foooooooooooooooter start */
+.footer-section {
+    background-color: var(--bg-color);
+    border-top: 3px solid var(--btns-bg);
+}
+
+.text-gold {
+    color: var(--btns-bg) !important;
+}
+
+.border-gold {
+    border-color: var(--btns-bg) !important;
+}
+
+.social-icon {
+    width: 38px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--btns-bg);
+    border-color: var(--btns-bg);
+    transform: translateY(-3px);
+}
+.social-icon:hover i{
+    color: var(--page-bg);
+}
+.footer-links a:hover {
+    color: var(--btns-bg) !important;
+    opacity: 1 !important;
+    padding-right: 4px;
+}
+
+.xsmall {
+    font-size: 0.825rem;
+}
+/* foooooooooooooooter end */
+
+/* ==================== تنسيقات الأزرار العائمة ==================== */
+.floating-buttons-wrapper {
+    bottom: 20px ;
+    right: 20px ;
+    z-index: 9999 ; /* لضمان ظهور الأزرار فوق كل عناصر الصفحة */
+}
+
+.float-btn {
+    width: 52px;
+    height: 52px;
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+}
+
+/* زر الاتصال */
+.float-phone {
+    background-color: var(--btns-bg);
+    color: var(--page-bg) ;
+}
+
+/* زر الواتساب */
+.float-whatsapp {
+    background-color: #25D366;
+}
+
+.float-whatsapp:hover {
+    background-color: #20ba5a;
+}
+
+/* تحسين المظهر للهواتف المحمولة */
+@media (max-width: 576px) {
+    .floating-buttons-wrapper {
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+    .float-btn {
+        width: 48px;
+        height: 48px;
+    }
+}
